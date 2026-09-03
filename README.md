@@ -1,0 +1,1 @@
+This repo contains an automation to retrieve all the app ids available using Steam Web API. The result is a CSV containing ~180k app ids and associated names.
