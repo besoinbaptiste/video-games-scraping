@@ -17,7 +17,7 @@ def main() :
         app_ids, last_app_id = get_app_ids(last_app_id)
         stored_data = merge_data(app_ids, stored_data) 
         time.sleep(2)
-    save_to_csv(stored_data, "data/steam_app_ids_list.csv")
+    save_to_csv(stored_data, "../data/steam_app_ids_list.csv")
 
 def get_app_ids(last_app_id = None, max_results = MAX_RESULTS) :
     url = URL
@@ -50,7 +50,7 @@ def merge_data(app_ids : list[dict], merged_data = list()) -> list[tuple[int, st
     merged_data = merged_data + new_appids
     return merged_data
 
-def save_to_csv(data : list[tuple[int, str]], output_path = "data/data.csv", sep=";") -> None :
+def save_to_csv(data : list[tuple[int, str]], output_path = "../data/data.csv", sep=";") -> None :
     with open(output_path, "w", encoding="UTF-8") as f :
         f.write(f"App ID{sep} Name\n")
         for app_id, name in data :
